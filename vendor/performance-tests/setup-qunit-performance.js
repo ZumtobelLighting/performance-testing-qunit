@@ -4,6 +4,6 @@ jQuery(window).load(function() {
   var TestLoader = require('ember-cli/test-loader')['default'];
   TestLoader.prototype.shouldLoadModule = function(moduleName) {
     return moduleName.match(/\/.*[-_]test$/) || (!QUnit.urlParams.nojshint && moduleName.match(/\.jshint$/)) || 
-      (!QUnit.urlParams.noperf && moduleName.match(/\/.*[-_]perf$/))
+      (QUnit.urlParams.noperf && moduleName.match(/\/.*[-_]perf$/))
   };
 });

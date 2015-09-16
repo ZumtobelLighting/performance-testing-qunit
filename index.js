@@ -6,7 +6,7 @@ module.exports = {
   included: function included(app) {
     this._super.included(app);
     if (app.tests) {
-      app.import('vendor/performance-tests/setup-qunit-performance.js');
+      app.import('vendor/performance-tests/setup-qunit-performance.js', {type: 'test'});
     }
   }
 };
